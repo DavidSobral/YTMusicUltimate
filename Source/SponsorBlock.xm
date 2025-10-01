@@ -76,18 +76,23 @@
                 skipAction.title = LOC(@"SKIP");
                 [skipAction setHandler:^ {
                     [self seekToTime:[[jsonDictionary objectForKey:@"segment"][1] floatValue]];
-
-                    [[%c(YTMToastController) alloc] showMessage:LOC(@"SEGMENT_SKIPPED") HUDMessageAction:unskipAction infoType:0 duration:ytmuInt(@"sbDuration")];
+                    [[%c(YTMToastController) alloc] showMessage:LOC(@"SEGMENT_SKIPPED")
+                                                HUDMessageAction:unskipAction
+                                                         infoType:0
+                                                         duration:ytmuInt(@"sbDuration")];
                 }];
 
                 if (ytmuInt(@"sbSkipMode") == 0) {
                     [self seekToTime:[[jsonDictionary objectForKey:@"segment"][1] floatValue]];
-
-                    [[%c(YTMToastController) alloc] showMessage:LOC(@"SEGMENT_SKIPPED") HUDMessageAction:unskipAction infoType:0 duration:ytmuInt(@"sbDuration")];
-                }
-
-                else {
-                    [[%c(YTMToastController) alloc] showMessage:LOC(@"FOUND_SEGMENT") HUDMessageAction:skipAction infoType:0 duration:ytmuInt(@"sbDuration")];
+                    [[%c(YTMToastController) alloc] showMessage:LOC(@"SEGMENT_SKIPPED")
+                                                HUDMessageAction:unskipAction
+                                                         infoType:0
+                                                         duration:ytmuInt(@"sbDuration")];
+                } else {
+                    [[%c(YTMToastController) alloc] showMessage:LOC(@"FOUND_SEGMENT")
+                                                HUDMessageAction:skipAction
+                                                         infoType:0
+                                                         duration:ytmuInt(@"sbDuration")];
                 }
             }
         }

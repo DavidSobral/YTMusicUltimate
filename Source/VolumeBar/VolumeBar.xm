@@ -23,8 +23,10 @@ static BOOL volumeBar = YTMU(@"YTMUltimateIsEnabled") && YTMU(@"volBar");
     self = %orig;
 
     if (self && volumeBar) {
-        self.volumeBar = [[GSVolBar alloc] initWithFrame:CGRectMake(self.frame.size.width / 2 - (self.frame.size.width / 2) / 2, 0, self.frame.size.width / 2, 25)];
-
+        self.volumeBar = [[GSVolBar alloc] initWithFrame:CGRectMake(self.frame.size.width / 2 - (self.frame.size.width / 2) / 2, 
+                                                                    0, 
+                                                                    self.frame.size.width / 2, 
+                                                                    25)];
         [self addSubview:self.volumeBar];
     }
 
@@ -35,7 +37,10 @@ static BOOL volumeBar = YTMU(@"YTMUltimateIsEnabled") && YTMU(@"volBar");
     %orig;
 
     if (volumeBar) {
-        self.volumeBar.frame = CGRectMake(self.frame.size.width / 2 - (self.frame.size.width / 2) / 2, CGRectGetMinY(self.tabView.frame) - 25, self.frame.size.width / 2, 25);
+        self.volumeBar.frame = CGRectMake(self.frame.size.width / 2 - (self.frame.size.width / 2) / 2, 
+                                          CGRectGetMinY(self.tabView.frame) - 25, 
+                                          self.frame.size.width / 2, 
+                                          25);
     }
 }
 
